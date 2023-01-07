@@ -1,0 +1,45 @@
+{
+	"name": "edd-stripe",
+	"title": "Easy Digital Downloads - Stripe Payment Gateway",
+	"version": "2.8.0",
+	"description": "Adds a payment gateway for Stripe.com",
+	"author": "Sandhills Development, LLC",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"stripe",
+		"wordpress",
+		"wordpress-plugin"
+	],
+	"homepage": "https://easydigitaldownloads.com/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/easydigitaldownloads/edd-stripe"
+	},
+	"bugs": "https://github.com/easydigitaldownloads/edd-stripe",
+	"engines": {
+		"node": ">=8.0.0",
+		"npm": ">=6.0.0"
+	},
+	"main": "webpack.config.js",
+	"devDependencies": {
+		"@wordpress/scripts": "12.4.0",
+		"core-js": "3.6.5",
+		"cross-env": "7.0.2",
+		"es6-promise-promise": "1.0.0",
+		"lodash.foreach": "4.5.0",
+		"micromodal": "0.4.6",
+		"mini-css-extract-plugin": "0.9.0",
+		"webpack": "4.44.0",
+		"webpack-fix-style-only-entries": "0.5.1"
+	},
+	"scripts": {
+		"build": "wp-scripts build && npm run i18n",
+		"dev": "cross-env NODE_ENV=production wp-scripts start",
+		"check-engines": "wp-scripts check-engines",
+		"check-licenses": "wp-scripts check-licenses --production",
+		"format:js": "wp-scripts format-js .",
+		"i18n": "wp i18n make-pot . languages/edds.pot --domain=edds",
+		"lint:js": "wp-scripts lint-js .",
+		"lint:pkg-json": "wp-scripts lint-pkg-json"
+	}
+}
